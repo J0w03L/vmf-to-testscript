@@ -1,0 +1,3 @@
+[submodule "src/PyVMF"]
+	path = src/PyVMF
+	url = https://github.com/surf-gorange/PyVMF.git
