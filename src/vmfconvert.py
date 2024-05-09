@@ -34,11 +34,12 @@ class TestScript:
                     for key, value in con.items():
                         ret[entIdx]["connections"].append(
                             {
-                                "event":  key,
-                                "target": value.split("\x1b")[0],
-                                "input":  value.split("\x1b")[1],
-                                "args":   value.split("\x1b")[2],
-                                "delay":  value.split("\x1b")[3]
+                                "event":     key,
+                                "target":    value.split("\x1b")[0],
+                                "input":     value.split("\x1b")[1],
+                                "args":      value.split("\x1b")[2],
+                                "delay":     value.split("\x1b")[3],
+                                "firecount": value.split("\x1b")[4]
                             }
                         )
 
@@ -122,7 +123,7 @@ class TestScript:
                 out.write(f"ent_keyvalue {entHammerIDs[entIdx]} \"{key}\" \"{value}\";\n")
             
             for con in ent["connections"]:
-                out.write(f"ent_keyvalue {entHammerIDs[entIdx]} \"{con['event']}\" \"{con['target']},{con['input']},{con['args']},{con['delay']}\";\n")
+                out.write(f"ent_keyvalue {entHammerIDs[entIdx]} \"{con['event']}\" \"{con['target']},{con['input']},{con['args']},{con['delay']},{con['firecount']}\";\n")
             
             out.write("test_wait .05;\n\n")
         

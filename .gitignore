@@ -1,4 +1,6 @@
 venv/
 *.vtest
 *.vmf
+*.vmx
+*.bsp
 *.pyc
